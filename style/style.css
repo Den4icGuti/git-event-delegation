@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.parent,
+.child,
+.inner-child {
+  margin: 16px;
+  padding: 16px;
+  border: solid 4px rgb(2, 2, 2);
+  border-radius: 4px;
+  color: #ffff;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.parent {
+  background-color: blue;
+}
+.child {
+  background-color: blueviolet;
+}
+.inner-child {
+  background-color: chocolate;
+}
