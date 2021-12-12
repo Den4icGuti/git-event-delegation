@@ -48,24 +48,28 @@ function onCurrentColor(event) {
   if (!colorSwatch) { 
     return;
   }
-
-
   
-  const currentActiveCard = document.querySelector('.color-card.is-active');
-
-  if (currentActiveCard) { 
-    currentActiveCard.classList.remove('is-active')
-  }
+  removeActiveCardClass();
+  
   const swatchEl = event.target;
   
   const parentColorCard = swatchEl.closest('.color-card');
  
   parentColorCard.classList.add('is-active');
 
-  console.log(swatchEl.dataset.hex);
-
-  document.body.style.backgroundColor = swatchEl.dataset.hex;
+   setColorBody(swatchEl.dataset.hex)
  }
 
+function setColorBody(color) { 
+  document.body.style.backgroundColor = color;
+}
 
+function removeActiveCardClass() { 
+
+const currentActiveCard = document.querySelector('.color-card.is-active');
+
+  if (currentActiveCard) { 
+    currentActiveCard.classList.remove('is-active')
+  }
+}
 
