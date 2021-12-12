@@ -1,6 +1,10 @@
-const buttonsRef = document.querySelector('.js-buttons');
+const container = document.querySelector('.js-buttons');
 
-buttonsRef.addEventListener('click', onButtonsClick);
+
+container.addEventListener('click', onButtonsClick);
+
+
+
 
 function onButtonsClick(event) { 
   
@@ -9,4 +13,22 @@ function onButtonsClick(event) {
   }
    console.log(event.target.nodeName)
   // console.log(event.target.textContent)
+   
+}
+const buttonRef = document.querySelector('.js-button');
+let countBtn = 0;
+
+buttonRef.addEventListener('click', onCreateNewButton);
+
+function onCreateNewButton() { 
+
+  const newButton = document.createElement('button');
+  newButton.textContent = `Новая кнопка ${countBtn}`;
+  newButton.type = 'button';
+  newButton.style.marginLeft = '10px';
+  newButton.style.marginTop = '10px'
+ 
+  container.appendChild(newButton);
+  
+  countBtn += 1;
 }

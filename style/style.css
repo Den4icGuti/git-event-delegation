@@ -2,6 +2,10 @@ body {
   font-family: sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 .links {
   display: flex;
   flex-direction: column;
@@ -28,4 +32,75 @@ body {
 }
 .inner-child {
   background-color: chocolate;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 8px;
+  background-color: #ffff;
+  user-select: none;
+  outline: tomato solid 2px;
+}
+
+.tags__item {
+  margin: 5px;
+}
+
+.tags__btn {
+  border: inherit;
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: beige;
+  color: black;
+  font-size: 18px;
+}
+
+.tags__btn--active {
+  background-color: blue;
+  color: #ffff;
+}
+
+.palette {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 12px;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.color-card {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.color-card.is-active {
+  transform: perspective(1000px) rotateX(360deg);
+}
+
+.color-swatch {
+  height: 130px;
+  cursor: pointer;
+}
+
+.color-meta {
+  padding: 10px;
+  font-weight: 700;
+}
+
+.color-meta {
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.1em;
 }
