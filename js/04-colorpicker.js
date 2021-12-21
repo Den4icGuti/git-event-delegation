@@ -49,15 +49,13 @@ function onCurrentColor(event) {
     return;
   }
   
-  removeActiveCardClass();
-  
   const swatchEl = event.target;
-  
   const parentColorCard = swatchEl.closest('.color-card');
  
-  parentColorCard.classList.add('is-active');
-
-   setColorBody(swatchEl.dataset.hex)
+   removeActiveCardClass(parentColorCard);
+   addActiveCardClass(parentColorCard)
+   setColorBody(swatchEl.dataset.hex);
+ 
  }
 
 function setColorBody(color) { 
@@ -73,3 +71,6 @@ const currentActiveCard = document.querySelector('.color-card.is-active');
   }
 }
 
+function addActiveCardClass(card) {
+  card.classList.add('is-active');
+ }
